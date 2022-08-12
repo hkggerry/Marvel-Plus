@@ -1,11 +1,21 @@
-import "./App.css";
+import React from "react";
 
 function App() {
   return (
     <div className="App">
       <header>HELLO WORLD</header>
-      <h1>TESTING</h1>
-      <h2>Testing pt.2</h2>
+      <form>
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="text" name="password" id="password" />
+        </div>
+
+        <input type="submit" value="Login" />
+      </form>
     </div>
   );
 }
