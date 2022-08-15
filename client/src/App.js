@@ -1,21 +1,19 @@
 import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/authentication/Login";
+import Navbar from "./components/navigation/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header>HELLO WORLD</header>
-      <form>
-        <div>
-          <label for="username">Username:</label>
-          <input type="text" name="username" id="username" />
-        </div>
-        <div>
-          <label for="password">Password:</label>
-          <input type="text" name="password" id="password" />
-        </div>
-
-        <input type="submit" value="Login" />
-      </form>
+    <div>
+      {/* <Router> */}
+      <Navbar />
+      {/* <Routes>
+          <Route exact path="/login"> */}
+      <Login />
+      {/* </Route>
+        </Routes>
+      </Router> */}
     </div>
   );
 }
