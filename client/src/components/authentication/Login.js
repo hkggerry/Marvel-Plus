@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login() {
+function Login({ loginMember }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,7 +20,9 @@ function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(strongParams),
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => loginMember(data.mebmer));
   };
 
   return (

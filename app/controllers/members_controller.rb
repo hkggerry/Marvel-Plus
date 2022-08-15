@@ -18,7 +18,8 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      render json: @member, status: :created, location: @member
+      @token = encode_token({ member_id: @member.id})
+      render json: {member: @member, token: @token}, status: :created, location: @member
     else
       render json: @member.errors, status: :unprocessable_entity
     end
