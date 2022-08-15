@@ -1,34 +1,36 @@
 import React, { useState } from "react";
 
-function Login({ loginMember }) {
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
 
-    const strongParams = {
-      member: {
-        username,
-        password,
-      },
-    };
-    fetch("http://localhost:3000/members", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(strongParams),
-    })
-      .then((response) => response.json())
-      .then((data) => loginMember(data.mebmer));
-  };
-
+  //     const strongParams = {
+  //       member: {
+  //         username,
+  //         password,
+  //       },
+  //     };
+  //     fetch("http://localhost:3000/members", {
+  //       method: "POST",
+  //       headers: {
+  //         // Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(strongParams),
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         loginMember(data.mebmer);
+  //         localStorage.getItem("token", data.token);
+  //       });
+  //   };
   return (
     <div>
       <h1>Marvel Movies</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -50,7 +52,7 @@ function Login({ loginMember }) {
           />
         </div>
 
-        <input type="submit" value="Login" />
+        <input type="submit" value="login" />
       </form>
     </div>
   );
