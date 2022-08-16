@@ -1,15 +1,17 @@
 import React, { useState, useContext } from "react";
 import { MemberContext } from "../context/member";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const { login } = useContext(MemberContext);
+  const [errorsList, setErrorsList] = useState([]);
+  const { signup } = useContext(MemberContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -19,7 +21,15 @@ function Login() {
     })
       .then((res) => res.json())
       .then((member) => {
-        login(member);
+        if (!member.errors) {
+          signup(member);
+          navigate("/");
+        } else {
+          setUsername("");
+          setPassword("");
+          const errorLis = member.errors.map((e) => <li>{e}</li>);
+          setErrorsList(errorLis);
+        }
       });
   };
   return (
@@ -47,10 +57,10 @@ function Login() {
           />
         </div>
 
-        <input type="submit" value="login" />
+        <input type="submit" value="create your account" />
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
