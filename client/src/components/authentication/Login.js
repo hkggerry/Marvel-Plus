@@ -1,13 +1,15 @@
 import React, { useState, useContext } from "react";
 import { MemberContext } from "../context/member";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const { login } = useContext(MemberContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
       method: "POST",
@@ -20,8 +22,9 @@ function Login() {
       .then((res) => res.json())
       .then((member) => {
         login(member);
+        navigate("/");
       });
-  };
+  }
   return (
     <div>
       <h1>Marvel Movies</h1>

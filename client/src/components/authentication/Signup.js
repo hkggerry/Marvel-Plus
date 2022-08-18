@@ -59,6 +59,7 @@ function Signup() {
 
         <input type="submit" value="create your account" />
       </form>
+      <ul>{errorsList}</ul>
     </div>
   );
 }
