@@ -24,63 +24,24 @@ function Navbar() {
     color: "black",
   };
 
-  // useEffect(() => {
-  //   fetch("/movies", {
-  //     method: "GET",
-  //     headers: { "Content-Type": "application/json" },
-  //   })
-  //     .then((r) => r.json())
-  //     .then((movies) => setMovie(movies));
-  // }, []);
-
-  // const movieData = movie.map((eachMovie) => {
-  //   return <MovieList key={eachMovie.id} movie={eachMovie} />;
-  // });
-
   if (loggedIn) {
     return (
       <div>
-        <h1>Marvel+</h1>
+        <NavLink to="/" exact style={{ color: "black" }}>
+          <h1>Marvel+</h1>
+        </NavLink>
         <h3>Welcome back {member.username}!</h3>
         <p>Membership Benefits includes:</p>
-        <NavLink
-          to="/"
-          exact
-          style={linkStyles}
-          activeStyle={{ background: "khaki" }}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/movielist"
-          exact
-          style={linkStyles}
-          activeStyle={{ background: "khaki" }}
-        >
+        <NavLink to="/movielist" exact style={linkStyles}>
           Movies
         </NavLink>
-        <NavLink
-          to="/tvshowslist"
-          exact
-          style={linkStyles}
-          activeStyle={{ background: "khaki" }}
-        >
+        <NavLink to="/tvshowslist" exact style={linkStyles}>
           TV Shows
         </NavLink>
-        <NavLink
-          to="/recentlyAdded"
-          exact
-          style={linkStyles}
-          activeStyle={{ background: "khaki" }}
-        >
+        <NavLink to="/recentlyAdded" exact style={linkStyles}>
           Recently Add
         </NavLink>
-        <NavLink
-          to="/myList"
-          exact
-          style={linkStyles}
-          activeStyle={{ background: "khaki" }}
-        >
+        <NavLink to="/myList" exact style={linkStyles}>
           My List
         </NavLink>
         <button onClick={logoutMember}>Logout</button>

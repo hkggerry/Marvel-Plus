@@ -7,7 +7,14 @@ function Home() {
   if (loggedIn) {
     return (
       <div>
-        <h3>{member.username}'s Home Page</h3>
+        <center>
+          <h3>{member.username}'s Home Page</h3>
+          <img
+            src="https://www.thedad.com/wp-content/uploads/2020/09/marvel-characters-real-names.jpg"
+            alt="timeline"
+            height="300px"
+          />
+        </center>
       </div>
     );
   } else {
