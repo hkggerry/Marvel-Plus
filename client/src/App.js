@@ -5,6 +5,7 @@ import Signup from "./components/authentication/Signup";
 import Navbar from "./components/navigation/Navbar";
 import Home from "./components/Home";
 import { MemberProvider } from "./components/context/member";
+import MovieList from "./components/static/MovieList";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/movielist" element={<MovieList />} />
         </Routes>
       </MemberProvider>
     </div>
