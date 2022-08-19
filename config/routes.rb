@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :movies
   resources :members
   delete '/logout', to: "sessions#destroy"
   post "/login", to: "sessions#create"

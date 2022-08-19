@@ -19,7 +19,8 @@ function Navbar() {
   if (loggedIn) {
     return (
       <div>
-        <h1>Hello {member.username}</h1>
+        <h1>Marvel Movies</h1>
+        <h3>Welcome back {member.username}!</h3>
         <button onClick={logoutMember}>Logout</button>
         <hr />
       </div>
