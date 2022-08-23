@@ -6,6 +6,8 @@ import Navbar from "./components/navigation/Navbar";
 import Home from "./components/Home";
 import { MemberProvider } from "./components/context/member";
 import MovieList from "./components/static/MovieList";
+import TvShowsList from "./components/static/TvShowsList";
+import WatchHistory from "./components/static/WatchHistory";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/movielist" element={<MovieList />} />
+          <Route exact path="/tvshowslist" element={<TvShowsList />} />
+          <Route exact path="/watchhistory" element={<WatchHistory />} />
         </Routes>
       </MemberProvider>
     </div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :reviews
   resources :movies
   resources :members
   delete '/logout', to: "sessions#destroy"

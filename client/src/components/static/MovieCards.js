@@ -1,4 +1,5 @@
 import React from "react";
+import MovieReviews from "./reviews/MovieReviews";
 
 function MovieCards({ movie }) {
   function clickAlert() {
@@ -17,6 +18,8 @@ function MovieCards({ movie }) {
         </button>
       </h4>
       <p>Release Date: {movie.short_description}</p>
+
+      <MovieReviews />
     </div>
   );
 }

@@ -9,6 +9,7 @@
 Member.create(username:"theavengers001", password:"iamgroot")
 
 
+
 Movie.create([
     {
         name: "Guardians of the Galaxy Vol.2",
@@ -37,5 +38,18 @@ Movie.create([
         rating: "7.9",
         image_url: "https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_.jpg",
         short_description: "Imprisoned on the other side of the universe, the mighty Thor finds himself in a deadly gladiatorial contest that pits him against the Hulk, his former ally and fellow Avenger. Thor's quest for survival leads him in a race against time to prevent the all-powerful Hela from destroying his home world and the Asgardian civilization."
+    }
+])
+
+Review.create([
+    {
+        comments: "Peter Quill and the gang saved the entire universe once again. Glad to learn the origin story of Peter and meeting new characters.",
+        member_id: 1,
+        movie_id: 1
+    },
+    {
+        comments: "Doctor Strange's cape is OP",
+        member_id: 1,
+        movie_id: 3
     }
 ])

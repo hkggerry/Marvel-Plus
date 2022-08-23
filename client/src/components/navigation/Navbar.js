@@ -31,7 +31,7 @@ function Navbar() {
           <h1>Marvel+</h1>
         </NavLink>
         <h3>Welcome back {member.username}!</h3>
-        <p>Membership Benefits includes:</p>
+        <p>Membership Access includes:</p>
         <NavLink to="/movielist" exact style={linkStyles}>
           Movies
         </NavLink>
@@ -41,8 +41,8 @@ function Navbar() {
         <NavLink to="/recentlyAdded" exact style={linkStyles}>
           Recently Add
         </NavLink>
-        <NavLink to="/myList" exact style={linkStyles}>
-          My List
+        <NavLink to="/watchHistory" exact style={linkStyles}>
+          Watch History
         </NavLink>
         <button onClick={logoutMember}>Logout</button>
         <hr />

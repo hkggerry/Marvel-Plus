@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def create
-        member = Member.find_by(params[:username])
+        member = Member.find_by(username: params[:username])
         if member && member.authenticate(params[:password])
             session[:member_id] = member.id
             render json: member
