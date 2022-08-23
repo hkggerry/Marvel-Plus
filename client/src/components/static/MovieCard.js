@@ -1,11 +1,14 @@
 import React from "react";
 import MovieReviews from "./reviews/MovieReviews";
 
-function MovieCards({ movie }) {
+function MovieCard({ movie }) {
   function clickAlert() {
     alert("Thanks for watching");
   }
 
+  const movieReviews = movie.reviews.map((review) => (
+    <MovieReviews key={review.id} review={review} />
+  ));
   return (
     <div>
       <img src={movie.image_url} alt={movie.name} height="300px" />
@@ -18,10 +21,9 @@ function MovieCards({ movie }) {
         </button>
       </h4>
       <p>Release Date: {movie.short_description}</p>
-
-      <MovieReviews />
+      {movieReviews}
     </div>
   );
 }
 
-export default MovieCards;
+export default MovieCard;

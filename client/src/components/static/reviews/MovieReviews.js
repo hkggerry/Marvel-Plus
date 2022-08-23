@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 
-function MovieReviews() {
+function MovieReviews({ review }) {
   const [comment, setComment] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Submitted");
-    // fetch("http://localhost:3000/reviews", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     comments: comment,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => console.log("submitted"));
   }
   return (
     <div>
@@ -32,6 +23,7 @@ function MovieReviews() {
         </div>
       </form>
       <br />
+      <li>{review.comments}</li>
     </div>
   );
 }

@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import MovieCards from "./MovieCards";
+import MovieCard from "./MovieCard";
 
 function MovieList() {
-  const [movie, setMovie] = useState([]);
+  const [movies, setMovies] = useState([]);
   useEffect(() => {
     fetch("/movies", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
       .then((r) => r.json())
-      .then((movies) => setMovie(movies));
+      .then((movies) => setMovies(movies));
   }, []);
 
-  const movieData = movie.map((eachMovie) => {
-    return <MovieCards key={eachMovie.id} movie={eachMovie} />;
+  const movieData = movies.map((eachMovie) => {
+    return <MovieCard key={eachMovie.id} movie={eachMovie} />;
   });
 
   return <div>{movieData}</div>;
