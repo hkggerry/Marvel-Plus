@@ -10,13 +10,21 @@ function MovieReviews({ review }) {
       .then((comments) => setComments(comments));
   }, []);
 
+  // Array of all reviews:
+  console.log(review);
+
+  // To store "state":
+  console.log(comments);
+  // The question is, do I need this state "comments" at all to delete the array?
+  // Can delete but need to refresh page, either handleDeleteReview function is wrong or handleDelete function.
+
   function handleDeleteReview(deletedReview) {
     const updatedReviews = comments.filter(
       (comment) => comment.id !== deletedReview.id
     );
     setComments(updatedReviews);
   }
-  console.log(comments);
+
   return (
     <div>
       <li>
