@@ -1,29 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import ReviewDelete from "./ReviewDelete";
 
 function MovieReviews({ review }) {
-  const [comment, setComment] = useState([]);
-
-  function handleSubmit(e) {
+  function handleDelete(e) {
     e.preventDefault();
-    console.log("Submitted");
+    fetch(`/reviews/${review.id}`, {
+      method: "DELETE",
+    });
+    //   .then((r) => r.json())
+    //   .then((data) => console.log(data));
+    console.log("Delete");
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="comment">Movie reviews:</label>
-          <input
-            type="text"
-            name="comment"
-            id="comment"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-          <input type="submit" value="Submit" />
-        </div>
-      </form>
-      <br />
-      <li>{review.comments}</li>
+      <ReviewDelete review={review} />
+      <li>
+        {review.comments} <button onClick={handleDelete}>(x)</button>
+      </li>
     </div>
   );
 }

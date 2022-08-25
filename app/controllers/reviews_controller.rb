@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   def destroy
     @review.destroy
+    # head :no_content
   end
 
   private
