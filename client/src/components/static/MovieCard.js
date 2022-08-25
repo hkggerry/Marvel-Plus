@@ -10,6 +10,7 @@ function MovieCard({ movie }) {
   const movieReviews = movie.reviews.map((review) => (
     <MovieReviews key={review.id} review={review} />
   ));
+
   return (
     <div>
       <img src={movie.image_url} alt={movie.name} height="300px" />

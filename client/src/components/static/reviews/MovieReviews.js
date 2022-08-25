@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReviewDelete from "./ReviewDelete";
 
 function MovieReviews({ review }) {
-  function handleDelete(e) {
-    e.preventDefault();
-    fetch(`/reviews/${review.id}`, {
-      method: "DELETE",
-    });
-    //   .then((r) => r.json())
-    //   .then((data) => console.log(data));
-    console.log("Delete");
+  const [comments, setComments] = useState({});
+
+  useEffect(() => {
+    fetch("/reviews")
+      .then((r) => r.json())
+      .then((comments) => setComments(comments));
+  }, []);
+
+  function handleDeleteReview(deletedReview) {
+    const updatedReviews = comments.filter(
+      (comment) => comment.id !== deletedReview.id
+    );
+    setComments(updatedReviews);
   }
+  console.log(comments);
   return (
     <div>
-      <ReviewDelete review={review} />
       <li>
-        {review.comments} <button onClick={handleDelete}>(x)</button>
+        {review.comments}
+        <ReviewDelete
+          review={review}
+          onDeleteReview={handleDeleteReview}
+          comment={comments}
+        />
       </li>
     </div>
   );
