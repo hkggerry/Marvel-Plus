@@ -35,8 +35,8 @@ function Navbar() {
         <NavLink to="/movielist" exact style={linkStyles}>
           Movies
         </NavLink>
-        <NavLink to="/tvshowslist" exact style={linkStyles}>
-          TV Shows
+        <NavLink to="/tvserieslist" exact style={linkStyles}>
+          TV Series
         </NavLink>
         <NavLink to="/recentlyAdded" exact style={linkStyles}>
           Recently Add
@@ -51,12 +51,14 @@ function Navbar() {
   } else {
     return (
       <div>
-        <NavLink to="/login">
-          <button>Login</button>
-        </NavLink>
-        <NavLink to="/signup">
-          <button>Signup</button>
-        </NavLink>
+        <center>
+          <NavLink to="/login">
+            <button>Login</button>
+          </NavLink>
+          <NavLink to="/signup">
+            <button>Signup</button>
+          </NavLink>
+        </center>
         <hr />
       </div>
     );

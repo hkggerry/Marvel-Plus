@@ -1,6 +1,6 @@
 import React from "react";
 
-function TvShowsList() {
+function TvSeriesList() {
   return (
     <div>
       <center>Work in progress...</center>
@@ -8,4 +8,4 @@ function TvShowsList() {
   );
 }
 
-export default TvShowsList;
+export default TvSeriesList;

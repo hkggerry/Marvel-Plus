@@ -13,12 +13,12 @@ function ReviewPost({ movie }) {
       },
       body: JSON.stringify({
         comments: comment,
-        member_id: 1,
+        member_id: 2,
       }),
     })
       .then((response) => response.json())
       .then(() => {
-        setComment({});
+        setComment("");
       });
   }
   return (

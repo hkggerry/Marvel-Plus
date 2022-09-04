@@ -13,8 +13,10 @@ function MovieCard({ movie }) {
 
   return (
     <div>
+      <h3>
+        {movie.name} ({movie.release_date})
+      </h3>
       <img src={movie.image_url} alt={movie.name} height="300px" />
-      <h4>{movie.name}</h4>
       <h4>
         Ratings: {movie.rating}{" "}
         <button onClick={clickAlert}>
@@ -22,8 +24,8 @@ function MovieCard({ movie }) {
           Play&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </button>
       </h4>
-      <p>{movie.short_description}</p>
-      <ReviewPost />
+      <p>{movie.short_description}&nbsp;&nbsp;</p>
+      <ReviewPost movie={movie} />
       {movieReviews}
       <br />
     </div>
