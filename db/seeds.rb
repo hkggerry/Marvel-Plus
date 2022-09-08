@@ -55,15 +55,15 @@ Movie.create([
     }
 ])
 
-Review.create([
-    {
-        comments: "Peter Quill and the gang saved the entire universe once again. Glad to learn the origin story of Peter and meeting new characters.",
-        member_id: 1,
-        movie_id: 1
-    },
-    {
-        comments: "Doctor Strange's cape is OP",
-        member_id: 1,
-        movie_id: 3
-    }
-])
+# Review.create([
+#     {
+#         comments: "Peter Quill and the gang saved the entire universe once again. Glad to learn the origin story of Peter and meeting new characters.",
+#         member_id: 1,
+#         movie_id: 1
+#     },
+#     {
+#         comments: "Doctor Strange's cape is OP",
+#         member_id: 1,
+#         movie_id: 3
+#     }
+# ])

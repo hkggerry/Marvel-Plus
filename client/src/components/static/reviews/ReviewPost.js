@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ReviewPost({ movie }) {
+function ReviewPost({ movie, onAdd }) {
   const [comment, setComment] = useState([]);
 
   function handleSubmit(e) {
@@ -17,10 +17,12 @@ function ReviewPost({ movie }) {
       }),
     })
       .then((response) => response.json())
-      .then(() => {
+      .then((review) => {
         setComment("");
+        onAdd(review);
       });
   }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
