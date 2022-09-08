@@ -2,13 +2,9 @@ import React from "react";
 import MovieReviews from "./reviews/MovieReviews";
 import ReviewPost from "./reviews/ReviewPost";
 
-function MovieCard({ movie, reviews, setReviews }) {
+function MovieCard({ movie }) {
   function clickAlert() {
     alert("Thanks for watching");
-  }
-
-  function handleAddReview(newReview) {
-    setReviews([...reviews, newReview]);
   }
 
   const movieReviews = movie.reviews.map((review) => (
@@ -29,7 +25,7 @@ function MovieCard({ movie, reviews, setReviews }) {
         </button>
       </h4>
       <p>{movie.short_description}&nbsp;&nbsp;</p>
-      <ReviewPost movie={movie} onAdd={handleAddReview} />
+      <ReviewPost movie={movie} />
       {movieReviews}
       <br />
     </div>

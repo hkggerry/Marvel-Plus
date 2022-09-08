@@ -3,7 +3,6 @@ import MovieCard from "./MovieCard";
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
-  // const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     fetch("/movies", {
@@ -12,26 +11,10 @@ function MovieList() {
     })
       .then((r) => r.json())
       .then((movies) => setMovies(movies));
-  }, []);
-
-  // useEffect(() => {
-  //   fetch("/reviews", {
-  //     method: "GET",
-  //     headers: { "Content-Type": "application/json" },
-  //   })
-  //     .then((r) => r.json())
-  //     .then((reviews) => setReviews(reviews));
-  // }, [reviews]);
+  }, [movies]);
 
   const movieData = movies.map((eachMovie) => {
-    return (
-      <MovieCard
-        key={eachMovie.id}
-        movie={eachMovie}
-        // setReviews={setReviews}
-        // reviews={reviews}
-      />
-    );
+    return <MovieCard key={eachMovie.id} movie={eachMovie} />;
   });
 
   return <div>{movieData}</div>;
