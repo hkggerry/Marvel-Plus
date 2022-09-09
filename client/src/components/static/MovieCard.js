@@ -7,9 +7,9 @@ function MovieCard({ movie }) {
     alert("Thanks for watching");
   }
 
-  const movieReviews = movie.reviews.map((review) => (
-    <MovieReviews key={review.id} review={review} />
-  ));
+  // const movieReviews = movie.reviews.map((review) => (
+  //   <MovieReviews key={review.id} review={review} />
+  // ));
 
   return (
     <div>
@@ -26,7 +26,8 @@ function MovieCard({ movie }) {
       </h4>
       <p>{movie.short_description}&nbsp;&nbsp;</p>
       <ReviewPost movie={movie} />
-      {movieReviews}
+      {/* {movieReviews} */}
+      <MovieReviews movie={movie} />
       <br />
     </div>
   );

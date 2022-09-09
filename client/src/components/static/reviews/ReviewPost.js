@@ -30,6 +30,7 @@ function ReviewPost({ movie }) {
           <input
             type="text"
             name="comment"
+            required="required"
             id="comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
