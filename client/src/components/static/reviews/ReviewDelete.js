@@ -1,7 +1,8 @@
 import React from "react";
 
 function ReviewDelete({ review, onDeleteReview }) {
-  function handleDelete() {
+  function handleDelete(e) {
+    e.preventDefault();
     fetch(`/reviews/${review.id}`, {
       method: "DELETE",
     })

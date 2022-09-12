@@ -33,10 +33,7 @@ function Navbar() {
         <h3>Welcome back {member.username}!</h3>
         <p>Membership Access includes:</p>
         <NavLink to="/movielist" exact style={linkStyles}>
-          Movies
-        </NavLink>
-        <NavLink to="/tvserieslist" exact style={linkStyles}>
-          TV Series
+          Movies + TV Series
         </NavLink>
         <NavLink to="/recentlyAdded" exact style={linkStyles}>
           Recently Add

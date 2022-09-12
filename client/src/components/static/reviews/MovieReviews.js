@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
-import ReadOnlyReview from "./ReadOnlyReview";
-// import ReviewDelete from "./ReviewDelete";
+import ReviewReadOnly from "./ReviewReadOnly";
 import ReviewEdit from "./ReviewEdit";
-import EditOnlyReview from "./EditOnlyReview";
 
 function MovieReviews({ movie }) {
   const [comments, setComments] = useState({});
@@ -52,28 +50,25 @@ function MovieReviews({ movie }) {
   }
   return (
     <div>
-      <li>
-        {/* {review.comments} */}
-        <form>
-          {movie.reviews.map((review) => (
-            <Fragment>
-              {editReviewId === review.id ? (
-                <EditOnlyReview
-                  editFormReview={editFormReview}
-                  handleEditFormChange={handleEditFormChange}
-                />
-              ) : (
-                <ReadOnlyReview
-                  review={review}
-                  handleEditClick={handleEditClick}
-                />
-              )}
-            </Fragment>
-          ))}
-        </form>
-        {/* <ReviewDelete review={review} onDeleteReview={handleDeleteReview} /> */}
-        <ReviewEdit />
-      </li>
+      <form>
+        <br />
+        {movie.reviews.map((review) => (
+          <Fragment>
+            {editReviewId === review.id ? (
+              <ReviewEdit
+                editFormReview={editFormReview}
+                handleEditFormChange={handleEditFormChange}
+              />
+            ) : (
+              <ReviewReadOnly
+                review={review}
+                handleEditClick={handleEditClick}
+                onDeleteReview={handleDeleteReview}
+              />
+            )}
+          </Fragment>
+        ))}
+      </form>
     </div>
   );
 }

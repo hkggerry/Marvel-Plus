@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/authentication/Login";
 import Signup from "./components/authentication/Signup";
@@ -6,7 +7,6 @@ import Home from "./components/Home";
 import Navbar from "./components/navigation/Navbar";
 import { MemberProvider } from "./components/context/member";
 import MovieList from "./components/static/MovieList";
-import TvSeriesList from "./components/static/TvSeriesList";
 import WatchHistory from "./components/static/WatchHistory";
 import RecentlyAdded from "./components/static/RecentlyAdded";
 
@@ -20,7 +20,6 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/movielist" element={<MovieList />} />
-          <Route exact path="/tvserieslist" element={<TvSeriesList />} />
           <Route exact path="/recentlyadded" element={<RecentlyAdded />} />
           <Route exact path="/watchhistory" element={<WatchHistory />} />
         </Routes>

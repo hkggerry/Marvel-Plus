@@ -26,7 +26,6 @@ function MovieCard({ movie }) {
       </h4>
       <p>{movie.short_description}&nbsp;&nbsp;</p>
       <ReviewPost movie={movie} />
-      {/* {movieReviews} */}
       <MovieReviews movie={movie} />
       <br />
     </div>
