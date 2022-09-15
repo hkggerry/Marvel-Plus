@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @reviews = Review.all
-
     render json: @reviews
   end
 
@@ -39,7 +38,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   def update
     
-    if @review.update(review_params)
+    if @review.update(comments: params[:comments])
       render json: @review
     else
       render json: @review.errors, status: :unprocessable_entity
