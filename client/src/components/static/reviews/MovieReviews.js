@@ -28,25 +28,38 @@ function MovieReviews({ movie }) {
 
   function handleEditClick(e, review) {
     e.preventDefault();
-    setEditReviewId(review.id);
-
+    console.log(review);
     const formValues = {
       comments: review.comments,
       member_id: 2,
     };
 
-    setEditFormReview(formValues);
+    fetch(`/reviews/${review.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formValues }),
+    })
+      .then((resp) => resp.json())
+      .then((updatedReview) => {
+        setEditReviewId(review.id);
+        // This one below stores the review when edit
+        setEditFormReview(formValues);
+        console.log(updatedReview);
+      });
   }
 
   function handleEditFormChange(e) {
     e.preventDefault();
-    const fieldName = e.target.getAttribute("name");
-    const fieldValue = e.target.value;
+    console.log("Saved");
+    // const fieldName = e.target.getAttribute("name");
+    // const fieldValue = e.target.value;
 
-    const newFormReview = { ...editFormReview };
-    newFormReview[fieldName] = fieldValue;
+    // const newFormReview = { ...editFormReview };
+    // newFormReview[fieldName] = fieldValue;
 
-    setEditFormReview(newFormReview);
+    // setEditFormReview(newFormReview);
   }
   return (
     <div>

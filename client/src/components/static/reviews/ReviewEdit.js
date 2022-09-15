@@ -1,6 +1,6 @@
 import React from "react";
 
-function ReviewEdit({ editformReview, handleEditFormChange }) {
+function ReviewEdit({ editFormReview, handleEditFormChange }) {
   return (
     <div>
       <input
@@ -8,8 +8,8 @@ function ReviewEdit({ editformReview, handleEditFormChange }) {
         required="required"
         placeholder="Edit Review"
         name="comments"
-        // value={editformReview.comments}
-        onChange={handleEditFormChange}
+        value={editFormReview.comments}
+        onChange={(e) => handleEditFormChange(e.target.value)}
       ></input>
       <button type="submit">Save</button>
     </div>
