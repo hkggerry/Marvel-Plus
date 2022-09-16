@@ -33,21 +33,8 @@ function MovieReviews({ movie }) {
       comments: review.comments,
       member_id: 2,
     };
-
-    fetch(`/reviews/${review.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ formValues }),
-    })
-      .then((resp) => resp.json())
-      .then((updatedReview) => {
-        setEditReviewId(review.id);
-        // This one below stores the review when edit
-        setEditFormReview(formValues);
-        console.log(updatedReview);
-      });
+    setEditReviewId(review.id);
+    setEditFormReview(formValues);
   }
 
   function handleEditFormChange(e) {
@@ -60,6 +47,20 @@ function MovieReviews({ movie }) {
     // newFormReview[fieldName] = fieldValue;
 
     // setEditFormReview(newFormReview);
+
+    // fetch(`/reviews/${review.id}`, {
+    //   method: "PATCH",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ formValues }),
+    // })
+    //   .then((resp) => resp.json())
+    //   .then((updatedReview) => {
+    //     setEditReviewId(review.id);
+    //     // This one below stores the review when edit
+    //     setEditFormReview(formValues);
+    //     console.log(updatedReview);
   }
   return (
     <div>
@@ -69,11 +70,13 @@ function MovieReviews({ movie }) {
           <Fragment>
             {editReviewId === review.id ? (
               <ReviewEdit
+                // key={review.id}
                 editFormReview={editFormReview}
                 handleEditFormChange={handleEditFormChange}
               />
             ) : (
               <ReviewReadOnly
+                // key={review.id}
                 review={review}
                 handleEditClick={handleEditClick}
                 onDeleteReview={handleDeleteReview}

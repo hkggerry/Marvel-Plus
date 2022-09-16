@@ -9,7 +9,7 @@ function ReviewEdit({ editFormReview, handleEditFormChange }) {
         placeholder="Edit Review"
         name="comments"
         value={editFormReview.comments}
-        onChange={(e) => handleEditFormChange(e.target.value)}
+        onChange={handleEditFormChange}
       ></input>
       <button type="submit">Save</button>
     </div>
