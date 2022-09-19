@@ -5,15 +5,14 @@ import ReviewEdit from "./ReviewEdit";
 function MovieReviews({ movie }) {
   const [comments, setComments] = useState({});
   const [editReviewId, setEditReviewId] = useState(null);
-  const [editFormReview, setEditFormReview] = useState({
-    comments: "",
-    member_id: 2,
-  });
+  const [editFormReview, setEditFormReview] = useState("");
 
   useEffect(() => {
     fetch("/reviews")
       .then((r) => r.json())
-      .then((comments) => setComments(comments));
+      .then((comments) => {
+        setComments(comments);
+      });
   }, []);
 
   function handleDeleteReview(deletedReview) {
@@ -29,39 +28,45 @@ function MovieReviews({ movie }) {
   function handleEditClick(e, review) {
     e.preventDefault();
     console.log(review);
+    setEditReviewId(review.id);
+
     const formValues = {
+      id: review.id,
       comments: review.comments,
       member_id: 2,
+      movie_id: review.movie_id,
     };
-    setEditReviewId(review.id);
     setEditFormReview(formValues);
   }
 
   function handleEditFormChange(e) {
     e.preventDefault();
     console.log("Saved");
-    // const fieldName = e.target.getAttribute("name");
-    // const fieldValue = e.target.value;
+    console.log(editFormReview);
 
-    // const newFormReview = { ...editFormReview };
-    // newFormReview[fieldName] = fieldValue;
-
-    // setEditFormReview(newFormReview);
-
-    // fetch(`/reviews/${review.id}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ formValues }),
-    // })
-    //   .then((resp) => resp.json())
-    //   .then((updatedReview) => {
-    //     setEditReviewId(review.id);
-    //     // This one below stores the review when edit
-    //     setEditFormReview(formValues);
-    //     console.log(updatedReview);
+    fetch(`/reviews/${editFormReview.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        comments: editFormReview.comments,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((updatedReview) => {
+        // This one below stores the review when edit
+        // setEditFormReview(formValues);
+        console.log(updatedReview);
+      });
   }
+  // const fieldName = e.target.getAttribute("name");
+  // const fieldValue = e.target.value;
+
+  // const newFormReview = { ...editFormReview };
+  // newFormReview[fieldName] = fieldValue;
+
+  // setEditFormReview(newFormReview);
   return (
     <div>
       <form>
@@ -72,6 +77,7 @@ function MovieReviews({ movie }) {
               <ReviewEdit
                 // key={review.id}
                 editFormReview={editFormReview}
+                setEditFormReview={setEditFormReview}
                 handleEditFormChange={handleEditFormChange}
               />
             ) : (

@@ -7,10 +7,6 @@ function MovieCard({ movie }) {
     alert("Thanks for watching");
   }
 
-  // const movieReviews = movie.reviews.map((review) => (
-  //   <MovieReviews key={review.id} review={review} />
-  // ));
-
   return (
     <div>
       <h3>

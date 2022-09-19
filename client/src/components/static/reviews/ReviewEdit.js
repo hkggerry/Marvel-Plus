@@ -1,17 +1,25 @@
 import React from "react";
 
-function ReviewEdit({ editFormReview, handleEditFormChange }) {
+function ReviewEdit({
+  setEditFormReview,
+  editFormReview,
+  handleEditFormChange,
+}) {
   return (
     <div>
-      <input
-        type="text"
-        required="required"
-        placeholder="Edit Review"
-        name="comments"
-        value={editFormReview.comments}
-        onChange={handleEditFormChange}
-      ></input>
-      <button type="submit">Save</button>
+      <li>
+        <input
+          type="text"
+          required="required"
+          placeholder="Edit Review"
+          name="comments"
+          value={editFormReview.comments}
+          onChange={(e) => setEditFormReview(e.target.value)}
+        ></input>
+        <button type="submit" onClick={handleEditFormChange}>
+          Save
+        </button>
+      </li>
     </div>
   );
 }
