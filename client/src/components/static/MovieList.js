@@ -11,7 +11,7 @@ function MovieList() {
     })
       .then((r) => r.json())
       .then((movies) => setMovies(movies));
-  }, [movies]);
+  }, []);
 
   const movieData = movies.map((eachMovie) => {
     return <MovieCard key={eachMovie.id} movie={eachMovie} />;
