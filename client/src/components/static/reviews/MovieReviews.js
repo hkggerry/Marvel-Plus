@@ -10,9 +10,7 @@ function MovieReviews({ movie }) {
   useEffect(() => {
     fetch("/reviews")
       .then((r) => r.json())
-      .then((comments) => {
-        setComments(comments);
-      });
+      .then((comments) => setComments(comments));
   }, []);
 
   function handleDeleteReview(deletedReview) {
@@ -20,9 +18,7 @@ function MovieReviews({ movie }) {
     const updatedReviews = comments.filter(
       (comment) => comment.id !== deletedReview.id
     );
-    console.log(comments);
     setComments(updatedReviews);
-    console.log(updatedReviews);
   }
 
   function handleEditClick(e, review) {
@@ -41,7 +37,6 @@ function MovieReviews({ movie }) {
 
   function handleEditFormChange(e) {
     e.preventDefault();
-    console.log("Saved");
     console.log(editFormReview);
 
     fetch(`/reviews/${editFormReview.id}`, {
@@ -55,34 +50,25 @@ function MovieReviews({ movie }) {
     })
       .then((resp) => resp.json())
       .then((updatedReview) => {
-        // This one below stores the review when edit
-        // setEditFormReview(formValues);
-        console.log(updatedReview);
+        setEditFormReview(updatedReview);
+        setEditReviewId(null);
       });
   }
-  // const fieldName = e.target.getAttribute("name");
-  // const fieldValue = e.target.value;
 
-  // const newFormReview = { ...editFormReview };
-  // newFormReview[fieldName] = fieldValue;
-
-  // setEditFormReview(newFormReview);
   return (
     <div>
       <form>
         <br />
         {movie.reviews.map((review) => (
-          <Fragment>
+          <Fragment key={review.id}>
             {editReviewId === review.id ? (
               <ReviewEdit
-                // key={review.id}
                 editFormReview={editFormReview}
                 setEditFormReview={setEditFormReview}
                 handleEditFormChange={handleEditFormChange}
               />
             ) : (
               <ReviewReadOnly
-                // key={review.id}
                 review={review}
                 handleEditClick={handleEditClick}
                 onDeleteReview={handleDeleteReview}

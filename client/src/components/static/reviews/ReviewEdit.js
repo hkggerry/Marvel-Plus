@@ -14,8 +14,13 @@ function ReviewEdit({
           placeholder="Edit Review"
           name="comments"
           value={editFormReview.comments}
-          onChange={(e) => setEditFormReview(e.target.value)}
-        ></input>
+          onChange={(e) =>
+            setEditFormReview({
+              ...editFormReview,
+              [e.target.name]: e.target.value,
+            })
+          }
+        />
         <button type="submit" onClick={handleEditFormChange}>
           Save
         </button>
