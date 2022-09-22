@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post "/movies/:movie_id/reviews", to: "reviews#create"
   get '/me', to: "members#show"
   get '/actors', to: "actors#index"
+  get '/movieactors', to: "movieactors#index"
 end

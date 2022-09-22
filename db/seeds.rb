@@ -145,91 +145,113 @@ Actor.create([
 
 MovieActor.create([
     {
-        movie_id: 1
+        id: 1,
+        movie_id: 1,
         actor_id: 1
     },
     {
-        movie_id: 1
+        id: 2,
+        movie_id: 1,
         actor_id: 2
     },
     {
-        movie_id: 1
+        id: 3,
+        movie_id: 1,
         actor_id: 3
     },
     {
-        movie_id: 1
+        id: 4,
+        movie_id: 1,
         actor_id: 4
     },
     {
-        movie_id: 2
+        id: 5,
+        movie_id: 2,
         actor_id: 5
     },
     {
-        movie_id: 2
+        id: 6,
+        movie_id: 2,
         actor_id: 6
     },
     {
-        movie_id: 2
+        id: 7,
+        movie_id: 2,
         actor_id: 7
     },
     {
-        movie_id: 2
+        id: 8,
+        movie_id: 2,
         actor_id: 8
     },
     {
-        movie_id: 2
+        id: 9,
+        movie_id: 2,
         actor_id: 9
     },
     {
-        movie_id: 2
+        id: 10,
+        movie_id: 10,
         actor_id: 10
     },
     {
-        movie_id: 2
+        id: 11,
+        movie_id: 2,
         actor_id: 11
     },
     {
-        movie_id: 6
+        id: 12,
+        movie_id: 6,
         actor_id: 12
     },
     {
-        movie_id: 6
+        id: 13,
+        movie_id: 6,
         actor_id: 13
     },
     {
-        movie_id: 5
+        id: 14,
+        movie_id: 5,
         actor_id: 14
     },
     {
-        movie_id: 6
+        id: 15,
+        movie_id: 6,
         actor_id: 15
     },
     {
-        movie_id: 4
+        id: 16,
+        movie_id: 4,
         actor_id: 16
     },
     {
-        movie_id: 2
+        id: 17,
+        movie_id: 2,
         actor_id: 1
     },
     {
-        movie_id: 2
+        id: 18,
+        movie_id: 2,
         actor_id: 2
     },
     {
-        movie_id: 3
+        id: 19,
+        movie_id: 3,
         actor_id: 2
     },
     {
-        movie_id: 4
+        id: 20,
+        movie_id: 4,
         actor_id: 2
     },
     {
-        movie_id: 5
+        id: 21,
+        movie_id: 5,
         actor_id: 4
     },
     {
-        movie_id: 5
+        id: 22,
+        movie_id: 5,
         actor_id: 5
     }
 ])
