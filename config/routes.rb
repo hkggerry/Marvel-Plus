@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   post "/signup", to: "members#create"
   post "/movies/:movie_id/reviews", to: "reviews#create"
   get '/me', to: "members#show"
-  # get '/actors', to: "actors#index"
+  get '/actors', to: "actors#index"
 end
