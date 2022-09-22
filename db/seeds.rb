@@ -58,7 +58,82 @@ Movie.create([
 Actor.create([
     {
         name: "Chris Pratt",
-        image_url: 1,
-        movie_id: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Chris_Pratt_2018.jpg/800px-Chris_Pratt_2018.jpg"
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Chris_Pratt_2018.jpg/800px-Chris_Pratt_2018.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Zoe Saldaña",
+        image_url: "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_32/3402271/200805-zoe-saldana-jm-1008.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Karen Gillan",
+        image_url: "https://flxt.tmsimg.com/assets/572089_v9_bd.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Dave Bautista",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Dave_Bautista_by_Gage_Skidmore_2.jpg/170px-Dave_Bautista_by_Gage_Skidmore_2.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Christ Hemsworth",
+        image_url: "https://cdn.britannica.com/92/215392-050-96A4BC1D/Australian-actor-Chris-Hemsworth-2019.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Christ Evans",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Mark_Kassen%2C_Tony_C%C3%A1rdenas_and_Chris_Evans_%28cropped%29.jpg/220px-Mark_Kassen%2C_Tony_C%C3%A1rdenas_and_Chris_Evans_%28cropped%29.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Robert Downey Jr.",
+        image_url: "https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Mark Ruffalo",
+        image_url: "https://flxt.tmsimg.com/assets/43389_v9_bc.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Scarlett Johansson",
+        image_url: "https://m.media-amazon.com/images/M/MV5BMTM3OTUwMDYwNl5BMl5BanBnXkFtZTcwNTUyNzc3Nw@@._V1_.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Benedict Cumberbatch",
+        image_url: "https://pyxis.nymag.com/v1/imgs/f47/788/caac0f6d9bc8edc26a8c8b17d69a41e447-02-sherlock.rsquare.w330.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Chadwick Boseman",
+        image_url: "https://www.biography.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU0ODc4NDQ5OTM5MzkyMTkz/gettyimages-931925994-square.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Michael B. Jordan",
+        image_url: "https://m.media-amazon.com/images/M/MV5BMjExOTY3NzExM15BMl5BanBnXkFtZTgwOTg1OTAzMTE@._V1_.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Letitia Wright",
+        image_url: "https://pyxis.nymag.com/v1/imgs/527/c00/860427b101cded62998c8948b1cb42d75b-letitia-wright.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Natalie Portman",
+        image_url: "https://m.media-amazon.com/images/M/MV5BYzU0ZGRhZWItMGJlNy00YzlkLWIzOWYtNDA2NzlhMDg3YjMwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Lupita Nyong'o",
+        image_url: "https://m.media-amazon.com/images/M/MV5BMTY0NTQ4MDY2Nl5BMl5BanBnXkFtZTgwNDk1MTEyMDE@._V1_.jpg",
+        movie_id: 1
+    },
+    {
+        name: "Tom Hiddleston",
+        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Tom_Hiddleston_%2836109110291%29_%28cropped%29.jpg/1200px-Tom_Hiddleston_%2836109110291%29_%28cropped%29.jpg",
+        movie_id: 1
     }
 ])
