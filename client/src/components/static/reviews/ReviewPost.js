@@ -13,7 +13,7 @@ function ReviewPost({ movie }) {
       },
       body: JSON.stringify({
         comments: comment,
-        member_id: 4,
+        member_id: 1,
       }),
     })
       .then((response) => response.json())

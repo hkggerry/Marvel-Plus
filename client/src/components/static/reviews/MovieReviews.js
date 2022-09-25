@@ -29,7 +29,7 @@ function MovieReviews({ movie }) {
     const formValues = {
       id: review.id,
       comments: review.comments,
-      member_id: 4,
+      member_id: 1,
       movie_id: review.movie_id,
     };
     setEditFormReview(formValues);

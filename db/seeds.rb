@@ -69,7 +69,7 @@ Actor.create([
     {
         id: 2,
         name: "Zoe Saldaña",
-        image_url: "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_32/3402271/200805-zoe-saldana-jm-1008.jpg"
+        image_url: "https://m.media-amazon.com/images/I/A17U0p11SkL._AC_SL1500_.jpg"
     },
     {
         id: 3,
@@ -109,12 +109,12 @@ Actor.create([
     {
         id: 10,
         name: "Benedict Cumberbatch",
-        image_url: "https://pyxis.nymag.com/v1/imgs/f47/788/caac0f6d9bc8edc26a8c8b17d69a41e447-02-sherlock.rsquare.w330.jpg"
+        image_url: "https://media.vanityfair.com/photos/580a0b41ceb79a6c5ca4c5ef/2:3/w_640,h_960,c_limit/benedict-cumberbatch-doctor-strange.jpg"
     },
     {
         id: 11,
         name: "Chadwick Boseman",
-        image_url: "https://www.biography.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU0ODc4NDQ5OTM5MzkyMTkz/gettyimages-931925994-square.jpg"
+        image_url: "https://static01.nyt.com/images/2020/08/30/multimedia/30boseman-obit-print3/29xp-boseman-blackpanther-mobileMasterAt3x.jpg"
     },
     {
         id: 12,
@@ -237,12 +237,12 @@ MovieActor.create([
     {
         id: 19,
         movie_id: 3,
-        actor_id: 2
+        actor_id: 10
     },
     {
         id: 20,
         movie_id: 4,
-        actor_id: 2
+        actor_id: 5
     },
     {
         id: 21,

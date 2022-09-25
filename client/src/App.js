@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Navbar from "./components/navigation/Navbar";
 import { MemberProvider } from "./components/context/member";
 import MovieList from "./components/static/MovieList";
-import WatchHistory from "./components/static/WatchHistory";
+import ActorList from "./components/static/Actor/ActorList";
 import RecentlyAdded from "./components/static/RecentlyAdded";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/movielist" element={<MovieList />} />
           <Route exact path="/recentlyadded" element={<RecentlyAdded />} />
-          <Route exact path="/watchhistory" element={<WatchHistory />} />
+          <Route exact path="/actorlist" element={<ActorList />} />
         </Routes>
       </MemberProvider>
     </div>

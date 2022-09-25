@@ -38,8 +38,8 @@ function Navbar() {
         <NavLink to="/recentlyAdded" exact style={linkStyles}>
           Recently Add
         </NavLink>
-        <NavLink to="/watchHistory" exact style={linkStyles}>
-          Watch History
+        <NavLink to="/actorlist" exact style={linkStyles}>
+          Featuring
         </NavLink>
         <button onClick={logoutMember}>Logout</button>
         <hr />

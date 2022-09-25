@@ -13,16 +13,6 @@ class ReviewsController < ApplicationController
   end
 
   # POST /movies/:id/reviews
-  # def create
-  #   @review = Review.new(review_params)
-
-  #   if @review.save
-  #     render json: @review, status: :created, location: @review
-  #   else
-  #     render json: @review.errors, status: :unprocessable_entity
-  #   end
-  # end
-
   def create
     @review = Review.new(comments: params[:comments], member_id: params[:member_id], movie_id: params[:movie_id])
 
@@ -33,7 +23,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  
 
   # PATCH/PUT /reviews/1
   def update
@@ -48,18 +37,15 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   def destroy
     @review.destroy
-    # head :no_content
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review
+  
+  def set_review
       @review = Review.find(params[:id])
-    end
+  end
 
-    # Only allow a list of trusted parameters through.
-    def review_params
-      params.require(:review).permit(:comments, :member_id, :movie_id)
-      
-    end
+  def review_params
+      params.require(:review).permit(:comments, :member_id, :movie_id)    
+  end
 end
