@@ -8,7 +8,6 @@
 
 Member.create(id: 1, username:"theavengers001", password:"iamgroot")
 
-
 Movie.create([
     {
         id: 1,
@@ -58,6 +57,55 @@ Movie.create([
         image_url: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg",
         short_description: "Thousands of years ago, five African tribes war over a meteorite containing the metal vibranium. One warrior ingests a heart-shaped herb affected by the metal and gains superhuman abilities, becoming the first Black Panther. He unites all but the Jabari Tribe to form the nation of Wakanda."
     }
+])
+
+Review.create([
+    {
+        comments: "The Guardians of the Galaxy saved the entire world once again" ,
+        member_id: 1,
+        movie_id: 1
+    },
+    {
+        comments: "Best MOVIE EVER" ,
+        member_id: 1,
+        movie_id: 2
+    },
+    {
+        comments: "Doctor Strange's cape is way too OP" ,
+        member_id: 1,
+        movie_id: 3
+    },
+    {
+        comments: "Favorite Thor movie out of all" ,
+        member_id: 1,
+        movie_id: 4
+    },
+    {
+        comments: "Wakanda Forever!" ,
+        member_id: 1,
+        movie_id: 6
+    },
+    {
+        comments: "Can't wait for the second movie to come" ,
+        member_id: 1,
+        movie_id: 6
+    },
+    {
+        comments: "Can't believe this is our last adventure with Captain America" ,
+        member_id: 1,
+        movie_id: 2
+    },
+    {
+        comments: "Got us audience speechless and tearing up hard!" ,
+        member_id: 1,
+        movie_id: 2
+    },
+    {
+        comments: "I AM GROOT!!" ,
+        member_id: 1,
+        movie_id: 1
+    }
+
 ])
 
 Actor.create([
@@ -253,5 +301,36 @@ MovieActor.create([
         id: 22,
         movie_id: 5,
         actor_id: 5
+    },
+    {
+        id: 23,
+        movie_id: 4,
+        actor_id: 8
+    },
+    {
+        id: 24,
+        movie_id: 2,
+        actor_id: 3
+    },
+    {
+        id: 25,
+        movie_id: 6,
+        actor_id: 11
+    },
+    {
+        id: 26,
+        movie_id: 2,
+        actor_id: 15
+    },
+    {
+        id: 27,
+        movie_id: 2,
+        actor_id: 13
+    },
+    {
+        id: 28,
+        movie_id: 2,
+        actor_id: 10
     }
+
 ])

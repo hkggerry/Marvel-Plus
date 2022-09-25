@@ -26,7 +26,7 @@ function Home() {
             throughout the course!
           </p>
           <h3>
-            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -{" "}
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
           </h3>
           <h3>{member.username}'s Home Page</h3>
         </center>
@@ -35,7 +35,20 @@ function Home() {
   } else {
     return (
       <center>
-        <h3>Please Login or Signup</h3>
+        <h1>Marvel+</h1>
+        <h3>Welcome to my Phase 4 Project </h3>
+        <p>
+          This project has offically proved that there are still infinite things
+          I have yet to learn and master.
+        </p>
+        <p>
+          Even though this project caused so much headaches, it has also
+          highlighted my weaknesses.
+        </p>
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        <p>I have worked very hard on this project</p>
+        <h4>\(◕ ◡ ◕)/</h4>
+        <p>Enjoy~</p>
       </center>
     );
   }

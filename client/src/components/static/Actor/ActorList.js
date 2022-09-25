@@ -3,7 +3,6 @@ import ActorCard from "./ActorCard";
 
 function ActorList() {
   const [cast, setCast] = useState([]);
-
   useEffect(() => {
     fetch("/actors")
       .then((resp) => resp.json())
@@ -14,7 +13,11 @@ function ActorList() {
     return <ActorCard key={eachActor.id} actor={eachActor} />;
   });
 
-  return <div className="container">{actorData}</div>;
+  return (
+    <div>
+      <div className="container">{actorData}</div>
+    </div>
+  );
 }
 
 export default ActorList;

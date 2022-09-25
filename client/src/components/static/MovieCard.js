@@ -2,7 +2,7 @@ import React from "react";
 import MovieReviews from "./reviews/MovieReviews";
 import ReviewPost from "./reviews/ReviewPost";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, toggle, setToggle }) {
   function clickAlert() {
     alert("Thanks for watching");
   }
@@ -21,8 +21,8 @@ function MovieCard({ movie }) {
         </button>
       </h4>
       <p>{movie.short_description}&nbsp;&nbsp;</p>
-      <ReviewPost movie={movie} />
-      <MovieReviews movie={movie} />
+      <ReviewPost movie={movie} toggle={toggle} setToggle={setToggle} />
+      <MovieReviews movie={movie} toggle={toggle} setToggle={setToggle} />
       <br />
     </div>
   );

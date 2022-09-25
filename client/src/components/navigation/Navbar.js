@@ -39,7 +39,7 @@ function Navbar() {
           Recently Add
         </NavLink>
         <NavLink to="/actorlist" exact style={linkStyles}>
-          Featuring
+          Cast Members
         </NavLink>
         <button onClick={logoutMember}>Logout</button>
         <hr />

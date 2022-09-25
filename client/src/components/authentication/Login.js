@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorsList, setErrorsList] = useState([]);
   const { login } = useContext(MemberContext);
   const navigate = useNavigate();
 
@@ -20,8 +21,15 @@ function Login() {
     })
       .then((res) => res.json())
       .then((member) => {
-        login(member);
-        navigate("/");
+        if (!member.errors) {
+          login(member);
+          navigate("/");
+        } else {
+          setUsername("");
+          setPassword("");
+          const errorLis = member.errors.map((e) => <div>{e}</div>);
+          setErrorsList(errorLis);
+        }
       });
   }
   return (
@@ -52,6 +60,20 @@ function Login() {
           <br />
           <input type="submit" value="login" />
         </form>
+        <ul>{errorsList}</ul>
+        <h3>Welcome to my Phase 4 Project </h3>
+        <p>
+          This project has offically proved that there are still infinite things
+          I have yet to learn and master.
+        </p>
+        <p>
+          Even though this project caused so much headaches, it has also
+          highlighted my weaknesses.
+        </p>
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        <p>I have worked very hard on this project</p>
+        <h4>\(◕ ◡ ◕)/</h4>
+        <p>Enjoy~</p>
       </center>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ReviewPost({ movie }) {
+function ReviewPost({ movie, toggle, setToggle }) {
   const [comment, setComment] = useState([]);
 
   function handleSubmit(e) {
@@ -19,6 +19,7 @@ function ReviewPost({ movie }) {
       .then((response) => response.json())
       .then(() => {
         setComment("");
+        setToggle(!toggle);
       });
   }
 

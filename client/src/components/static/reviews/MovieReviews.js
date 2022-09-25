@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import ReviewReadOnly from "./ReviewReadOnly";
 import ReviewEdit from "./ReviewEdit";
 
-function MovieReviews({ movie }) {
+function MovieReviews({ movie, toggle, setToggle }) {
   const [comments, setComments] = useState({});
   const [editReviewId, setEditReviewId] = useState(null);
   const [editFormReview, setEditFormReview] = useState("");
@@ -19,6 +19,7 @@ function MovieReviews({ movie }) {
       (comment) => comment.id !== deletedReview.id
     );
     setComments(updatedReviews);
+    setToggle(!toggle);
   }
 
   function handleEditClick(e, review) {
@@ -52,6 +53,7 @@ function MovieReviews({ movie }) {
       .then((updatedReview) => {
         setEditFormReview(updatedReview);
         setEditReviewId(null);
+        setToggle(!toggle);
       });
   }
 

@@ -3,18 +3,23 @@ import MovieCard from "./MovieCard";
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
-    fetch("/movies", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
+    fetch("/movies")
       .then((r) => r.json())
       .then((movies) => setMovies(movies));
-  }, [movies]);
+  }, [toggle]);
 
   const movieData = movies.map((eachMovie) => {
-    return <MovieCard key={eachMovie.id} movie={eachMovie} />;
+    return (
+      <MovieCard
+        key={eachMovie.id}
+        movie={eachMovie}
+        toggle={toggle}
+        setToggle={setToggle}
+      />
+    );
   });
 
   return <div>{movieData}</div>;
