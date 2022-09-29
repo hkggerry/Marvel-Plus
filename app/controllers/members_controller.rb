@@ -20,9 +20,9 @@ class MembersController < ApplicationController
   end
 
   def index
-    @members = Member.all
+    members = Member.all
 
-    render json: @members
+    render json: members.to_json(except: [:created_at, :updated_at], include: [reviews: {except: [:created_at, :updated_at]}]) 
   end
 
   private

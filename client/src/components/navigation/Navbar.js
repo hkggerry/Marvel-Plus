@@ -27,18 +27,18 @@ function Navbar() {
   if (loggedIn) {
     return (
       <div>
-        <NavLink to="/" exact style={{ color: "black" }}>
+        <NavLink to="/" style={{ color: "black" }}>
           <h1>Marvel+</h1>
         </NavLink>
         <h3>Welcome back {member.username}!</h3>
         <p>Membership Access includes:</p>
-        <NavLink to="/movielist" exact style={linkStyles}>
+        <NavLink to="/movielist" style={linkStyles}>
           Movies + TV Series
         </NavLink>
-        <NavLink to="/recentlyAdded" exact style={linkStyles}>
+        <NavLink to="/recentlyAdded" style={linkStyles}>
           Recently Add
         </NavLink>
-        <NavLink to="/actorlist" exact style={linkStyles}>
+        <NavLink to="/actorlist" style={linkStyles}>
           Cast Members
         </NavLink>
         <button onClick={logoutMember}>Logout</button>

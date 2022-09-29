@@ -1,11 +1,13 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useContext } from "react";
 import ReviewReadOnly from "./ReviewReadOnly";
 import ReviewEdit from "./ReviewEdit";
+import { MemberContext } from "../../context/member";
 
 function MovieReviews({ movie, toggle, setToggle }) {
   const [comments, setComments] = useState({});
   const [editReviewId, setEditReviewId] = useState(null);
   const [editFormReview, setEditFormReview] = useState("");
+  const { member } = useContext(MemberContext);
 
   useEffect(() => {
     fetch("/reviews")
@@ -30,7 +32,7 @@ function MovieReviews({ movie, toggle, setToggle }) {
     const formValues = {
       id: review.id,
       comments: review.comments,
-      member_id: 1,
+      member_id: member.id,
       movie_id: review.movie_id,
     };
     setEditFormReview(formValues);

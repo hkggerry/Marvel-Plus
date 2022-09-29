@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { MemberContext } from "../../context/member";
 
 function ReviewPost({ movie, toggle, setToggle }) {
   const [comment, setComment] = useState([]);
+  const { member } = useContext(MemberContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,7 +15,7 @@ function ReviewPost({ movie, toggle, setToggle }) {
       },
       body: JSON.stringify({
         comments: comment,
-        member_id: 1,
+        member_id: member.id,
       }),
     })
       .then((response) => response.json())

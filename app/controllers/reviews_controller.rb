@@ -3,8 +3,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
-    render json: @reviews
+    reviews = Review.all
+    render json: reviews.to_json(except: [:created_at, :updated_at], include: [member: {only:[:id, :username]}])
   end
 
   # GET /reviews/1

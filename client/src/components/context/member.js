@@ -27,6 +27,7 @@ function MemberProvider({ children }) {
     setMember(member);
     setLoggedIn(true);
   };
+
   return (
     <MemberContext.Provider value={{ member, login, logout, signup, loggedIn }}>
       {children}
