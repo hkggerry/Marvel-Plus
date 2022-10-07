@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   resources :members, only: [:index, :show, :create]
-  # resources :movies, only: [:index]
+
 
   delete '/logout', to: "sessions#destroy"
   post "/login", to: "sessions#create"
