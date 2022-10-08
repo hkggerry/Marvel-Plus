@@ -1,4 +1,18 @@
-# Project Template: React/Rails API
+# Welcome to my Project 4 - Marvel+
+
+I have created a webpage where users can watch movies and leave movies reviews when they are logged in. 
+
+
+
+
+
+
+
+
+
+
+
+# Project Template: React/Rails API 
 
 ## Description
 
