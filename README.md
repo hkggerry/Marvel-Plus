@@ -3,7 +3,7 @@
 I have created a webpage where account users can watch movies and leave movies reviews when they are logged in. 
 Combining with React on frontend and Ruby on Rails for backend, I was able to easily create a functional webpage.
 
-Guide to use Marvel+
+## Guide to use Marvel+
 
 1. In the beginning of the webpage, user has the option to login or sign up to access account exclusive functions. 
 2. Once logged in, user may navigate to the "Movies + TV Series" tab either to watch movies or leave reviews. 
@@ -12,7 +12,7 @@ Guide to use Marvel+
 5. "Cast Members" tab showcases the power of Join Table. Users can view which movies the actors/ actresses are featured.
 6. When a user is finished with the app, simply clicking "Logout" button will log a user out.
 
-Challenges
+## Challenges
 
 1. Creating a functional login/ signup button
 2. Building full CRUD for Reviews
