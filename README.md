@@ -1,16 +1,24 @@
 # Welcome to my Project 4 - Marvel+
 
-I have created a webpage where users can watch movies and leave movies reviews when they are logged in. 
+I have created a webpage where account users can watch movies and leave movies reviews when they are logged in. 
+Combining with React on frontend and Ruby on Rails for backend, I was able to easily create a functional webpage.
 
+Guide to use Marvel+
 
+1. In the beginning of the webpage, user has the option to login or sign up to access account exclusive functions. 
+2. Once logged in, user may navigate to the "Movies + TV Series" tab either to watch movies or leave reviews. 
+3. Users can browse all exisiting reviews, but can only edit or delete the reviews belong to themselves. 
+4. "Recently Added" and "Cast Members" tabs do not have functions a user can interact with other than for browsing.
+5. "Cast Members" tab showcases the power of Join Table. Users can view which movies the actors/ actresses are featured.
+6. When a user is finished with the app, simply clicking "Logout" button will log a user out.
 
+Challenges
 
+1. Creating a functional login/ signup button
+2. Building full CRUD for Reviews
+3. Making sense to the concepts of a join table
 
-
-
-
-
-
+This website might look simple, but I have poured my heart into creating this project. Thanks for checking out my project!
 
 # Project Template: React/Rails API 
 

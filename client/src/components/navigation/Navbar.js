@@ -36,7 +36,7 @@ function Navbar() {
           Movies + TV Series
         </NavLink>
         <NavLink to="/recentlyAdded" style={linkStyles}>
-          Recently Add
+          Recently Added
         </NavLink>
         <NavLink to="/actorlist" style={linkStyles}>
           Cast Members
