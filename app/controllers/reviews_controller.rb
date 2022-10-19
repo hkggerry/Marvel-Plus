@@ -15,7 +15,6 @@ class ReviewsController < ApplicationController
   # POST /movies/:id/reviews
   def create
     @review = Review.new(comments: params[:comments], member_id: params[:member_id], movie_id: params[:movie_id])
-
     if @review.save
       render json: @review, status: :created, location: @review
     else

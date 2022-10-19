@@ -3,6 +3,7 @@ import ActorCard from "./ActorCard";
 
 function ActorList() {
   const [cast, setCast] = useState([]);
+
   useEffect(() => {
     fetch("/actors")
       .then((resp) => resp.json())

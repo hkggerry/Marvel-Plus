@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   get '/me', to: "members#show"
   get '/movies', to: 'movies#index'
   get '/actors', to: "actors#index"
-  # get '/searchactors/:name', to: "actors#search"
-  patch "/actors/:id", to: "actors#increment_likes"
   get '/movieactors', to: "movieactors#index"
-
 
 end

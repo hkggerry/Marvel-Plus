@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorsList, setErrorsList] = useState([]);
   const { login } = useContext(MemberContext);
   const navigate = useNavigate();
 
@@ -27,8 +26,6 @@ function Login() {
         } else {
           setUsername("");
           setPassword("");
-          const errorLis = member.errors.map((e) => <div>{e}</div>);
-          setErrorsList(errorLis);
         }
       });
   }
@@ -60,7 +57,6 @@ function Login() {
           <br />
           <input type="submit" value="login" />
         </form>
-        <ul>{errorsList}</ul>
         <h3>Welcome to my Phase 4 Project </h3>
         <p>
           This project has offically proved that there are still infinite things
