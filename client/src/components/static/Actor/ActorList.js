@@ -10,15 +10,16 @@ function ActorList() {
       .then((actors) => setCast(actors));
   }, []);
 
+  useEffect(() => {
+    fetch("/movies")
+      .then((res) => res.json())
+      .then((movies) => console.log(movies.name));
+  }, []);
   const actorData = cast.map((eachActor) => {
     return <ActorCard key={eachActor.id} actor={eachActor} />;
   });
 
-  return (
-    <div>
-      <div className="container">{actorData}</div>
-    </div>
-  );
+  return <div className="container">{actorData}</div>;
 }
 
 export default ActorList;

@@ -37,6 +37,19 @@ class ReviewsController < ApplicationController
     @review.destroy
   end
 
+
+def wordcount
+  # byebug
+  review = Review.all.filter{|review|review.comments.split.count > params[:comments].to_i}
+  if review.count > 0
+  render json: review
+else
+  render json: {error: "whatever... movie not found"}
+end
+end
+
+
+
   private
   
   def set_review

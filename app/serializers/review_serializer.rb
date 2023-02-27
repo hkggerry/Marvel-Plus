@@ -4,4 +4,5 @@ class ReviewSerializer < ActiveModel::Serializer
   def add_member
     "#{self.object.member.username}"
   end
+
 end

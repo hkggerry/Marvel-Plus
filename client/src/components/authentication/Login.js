@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorsList2, setErrorsList2] = useState([]);
   const { login } = useContext(MemberContext);
   const navigate = useNavigate();
 
@@ -20,12 +21,15 @@ function Login() {
     })
       .then((res) => res.json())
       .then((member) => {
-        if (!member.errors) {
+        if (!member.error) {
           login(member);
           navigate("/");
         } else {
           setUsername("");
           setPassword("");
+          console.log(member.error);
+          const errorLis = member.error;
+          setErrorsList2(errorLis);
         }
       });
   }
@@ -57,19 +61,7 @@ function Login() {
           <br />
           <input type="submit" value="login" />
         </form>
-        <h3>Welcome to my Phase 4 Project </h3>
-        <p>
-          This project has offically proved that there are still infinite things
-          I have yet to learn and master.
-        </p>
-        <p>
-          Even though this project caused so much headaches, it has also
-          highlighted my weaknesses.
-        </p>
-        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        <p>I have worked very hard on this project</p>
-        <h4>\(◕ ◡ ◕)/</h4>
-        <p>Enjoy~</p>
+        <ul>{errorsList2}</ul>
       </center>
     </div>
   );
